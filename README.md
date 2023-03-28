@@ -11,14 +11,16 @@ Record and display android automation with Appium using Java.
 
 <H3> Pre-reqs & environment set up </H3>
 
-1. Install JAVA JDK
+1. Install JAVA JDK - set JAVA_HOME
 2. Install Homebrew
-3. Install maven
-4. Install Android Studio
-5. Install node
+3. Install node
+4. Install maven
+5. Install Android Studio - set up emulators & ANDROID_HOME
 6. Download Appium Desktop
 7. Install libimobiledevice
 8. Install XCode
+9. Install adb - android-platform-tools
+10. Install appium inspector - set up device connections(port/path/capabilities)
 
 With all these the coresponding env variables must alse be configured.\
 <H3> Programing </H3>
