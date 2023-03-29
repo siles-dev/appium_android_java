@@ -30,7 +30,7 @@ public class AndroidMobileDriver {
         capabilities.setCapability("deviceName",System.getenv("DEVICE_ID"));
         //Test app
         capabilities.setCapability("appPackage", System.getenv("APP_PKG"));
-        capabilities.setCapability("appActivity","com.example.zapoteco.activities.DashboardActivity");
+        capabilities.setCapability("appActivity",System.getenv("APP_ACTIVITY"));
         //Prevent app re-install
         capabilities.setCapability("noReset", true);
         capabilities.setCapability("fullReset",false);
