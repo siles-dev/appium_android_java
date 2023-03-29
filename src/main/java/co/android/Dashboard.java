@@ -5,10 +5,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-//Steps 6 - Create a class for each modular screen/feature that extends your base class
+//Steps 6 - Create a class for each modular screen/feature that extends your base class - NOTE: a pro for this framework
 public class Dashboard extends BaseScreen {
     public Dashboard(AndroidDriver driver) {
-        //Initialize page(create elements)
+        //Initialize page(create elements - NOTE: a con of this framework)
         this.driver = driver;
         // TODO: Look into `AppiumFieldDecorator` to use @AndroidFindBy or @iOSFindBy
         PageFactory.initElements(driver, this);
@@ -21,20 +21,16 @@ public class Dashboard extends BaseScreen {
     private WebElement firstDashboardItem;
 
 // Step 8 - Create functions that allow interactions and validations for the screen/feature
-    /*
     //Dashboard interactions
-     */
     public void tapDashboardItem(int itemNum) {
-        //TODO: Update to use `itemNum`
+        firstDashboardItem.click();
     }
 
-    /*
     // Dashboard validations
-     */
     public String getDashboardName() {
         return dashboardTitle.getText();
     }
-    public boolean isDashboardDisplaed() {
+    public boolean isDashboardDisplayed() {
         return isElementDisplayed(dashboardTitle);
     }
 }

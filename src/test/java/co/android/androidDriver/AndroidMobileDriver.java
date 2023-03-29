@@ -6,9 +6,9 @@ import org.testng.annotations.AfterSuite;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-//Step 1 - create a driver class that will connect to 1 device TODO: Update code to handle various device capabilities
+//Step 1 - create a driver class that will connect to 1 device
 public class AndroidMobileDriver {
-    public AndroidDriver driver;
+    private AndroidDriver driver;
     DesiredCapabilities capabilities;
     URL url;
 
@@ -16,8 +16,10 @@ public class AndroidMobileDriver {
 // Step 3 - Validate device connectivity through adb and appium inspector
 // Connect device, run app and use adb - `adb shell dumpsys activity` if package name is not given
 // Step 4 - Create a generic constructor to connect to appium server and a device
-    public AndroidMobileDriver() {
-        ///Appium connection settings
+    public AndroidMobileDriver(String androidVer, String deviceId) {
+        //  TODO: Update code to handle various device capabilities
+
+        // Appium connection settings
         try {
             url = new URL("http://0.0.0.0:4723/wd/hub");
         } catch (MalformedURLException e) {
@@ -26,8 +28,8 @@ public class AndroidMobileDriver {
         //Test device config
         capabilities = new DesiredCapabilities();
         capabilities.setCapability("platformName", "Android");
-        capabilities.setCapability("AndroidVersion","11");
-        capabilities.setCapability("deviceName",System.getenv("DEVICE_ID"));
+        capabilities.setCapability("AndroidVersion",androidVer);
+        capabilities.setCapability("deviceName",deviceId);
         //Test app
         capabilities.setCapability("appPackage", System.getenv("APP_PKG"));
         capabilities.setCapability("appActivity",System.getenv("APP_ACTIVITY"));
@@ -35,12 +37,13 @@ public class AndroidMobileDriver {
         capabilities.setCapability("noReset", true);
         capabilities.setCapability("fullReset",false);
         driver = new AndroidDriver(url, capabilities);
-        //TODO: Set up timeouts
+        // TODO: Set up timeouts
     }
 
     public AndroidDriver getDriver() {
         return driver;
     }
+
     // Add clean up for the driver
     @AfterSuite
     public void CleanUp() {
