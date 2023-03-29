@@ -4,7 +4,7 @@ Record and display android automation with Appium using Java.
 <H1> Running </H1>
 
 1. Start Appium server.
-2. Set up environment variables. Have devices connected / emulators started. Accordingly, update the (.*Test.java) test file with the relevant information about the devices.
+2. Set up environment variables. Have devices connected / emulators started. Accordingly, update the (AndroidMobileDriver.java) test file with the relevant information about the devices.
 3. Run test class.
 
 <H1> Procedure </H1>
