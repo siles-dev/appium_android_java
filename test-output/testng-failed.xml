@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Android automation with Appium in Java]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Device connection(failed)">
+    <classes>
+      <class name="co.android.tests.ConnectivityTest">
+        <methods>
+          <include name="scanningQRTest"/>
+          <include name="CleanUp"/>
+        </methods>
+      </class> <!-- co.android.tests.ConnectivityTest -->
+    </classes>
+  </test> <!-- Device connection(failed) -->
+</suite> <!-- Failed suite [Android automation with Appium in Java] -->
